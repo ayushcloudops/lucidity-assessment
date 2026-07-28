@@ -2,6 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "hello-world-app.fullname" . }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   type: {{ .Values.service.type }}
   selector:
