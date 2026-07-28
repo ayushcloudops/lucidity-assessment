@@ -1,0 +1,21 @@
+# Grafana Helm values (the ONLY chart that receives overrides).
+# Rendered by Terraform via templatefile(); ${namespace} is the release namespace.
+
+service:
+  type: ClusterIP
+
+persistence:
+  enabled: false
+
+# Preconfigure the Prometheus datasource so Grafana works on first login.
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        access: proxy
+        url: http://prometheus-server.${namespace}.svc.cluster.local
+        isDefault: true
+
+# adminPassword is injected by Terraform (set_sensitive), not stored here.

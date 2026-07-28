@@ -1,0 +1,20 @@
+# Local Terraform state, caches and provider plugins — never commit these.
+# NOTE: .terraform.lock.hcl is intentionally NOT ignored — commit it so every
+# run resolves identical provider versions (HashiCorp best practice).
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Plan output and any local secret var-files. A saved plan can contain secrets
+# in plaintext, so ignore both the extension form and a bare `tfplan` file.
+*.tfplan
+tfplan
+*.auto.tfvars
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
