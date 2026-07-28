@@ -72,8 +72,3 @@ Prometheus and Grafana are installed into the `monitoring` namespace by the
 `eks-utils` module. Prometheus scrapes the app's `/metrics` endpoint (via the
 Service annotations) alongside Kubernetes and node metrics; Grafana ships with
 the Prometheus datasource preconfigured.
-
-```bash
-kubectl -n monitoring port-forward svc/grafana 3000:80
-# open http://localhost:3000  (user: admin)
-```
