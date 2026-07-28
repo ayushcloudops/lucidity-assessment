@@ -7,8 +7,12 @@ image:
 
 service:
   type: LoadBalancer
-  port: 80
-  targetPort: 8080
+  port: 5000
+  targetPort: 5000
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/path: "/metrics"
+    prometheus.io/port: "5000"
 
 ingress:
   enabled: false
