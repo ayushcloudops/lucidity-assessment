@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "hello-world.fullname" . }}
+  name: {{ include "hello-world-app.fullname" . }}
   labels:
-    app: {{ include "hello-world.name" . }}
+    app: {{ include "hello-world-app.name" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "hello-world.name" . }}
+      app: {{ include "hello-world-app.name" . }}
   template:
     metadata:
       labels:
-        app: {{ include "hello-world.name" . }}
+        app: {{ include "hello-world-app.name" . }}
     spec:
       containers:
-      - name: hello-world
+      - name: hello-world-app
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
