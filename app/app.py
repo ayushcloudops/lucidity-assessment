@@ -20,7 +20,7 @@ REQUEST_LATENCY = Histogram(
 @REQUEST_LATENCY.time()
 def home():
     REQUEST_COUNT.labels("GET", "/", "200").inc()
-    return "Hello from EKS!"
+    return "Hello World!"
 
 @app.route("/health")
 def health():
