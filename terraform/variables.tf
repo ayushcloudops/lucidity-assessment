@@ -11,18 +11,6 @@ variable "project" {
   default     = "hello-world"
 }
 
-variable "environment" {
-  description = "Deployment environment (e.g. dev, prod). Drives naming and tags."
-  type        = string
-  default     = "dev"
-}
-
-variable "owner" {
-  description = "Team or individual responsible for these resources."
-  type        = string
-  default     = "platform-team"
-}
-
 variable "additional_tags" {
   description = "Extra tags merged into the common tag set."
   type        = map(string)

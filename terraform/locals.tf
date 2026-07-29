@@ -1,5 +1,5 @@
 locals {
-  name_prefix  = "${var.project}-${var.environment}"
+  name_prefix  = "${var.project}"
   cluster_name = "${local.name_prefix}-eks"
 
   # Take the first N available AZs in the region rather than hardcoding them.
